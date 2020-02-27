@@ -1,0 +1,80 @@
+<!--申请记录-->
+<view class="weui-tab">
+	<view class="weui-navbar">
+		<block wx:for-items="{{tabs}}" wx:key="index">
+			<view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+				<view class="weui-navbar__title">{{item}}</view>
+			</view>
+		</block>
+		<view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+	</view>
+	<view class="weui-tab__panel">
+		<view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+			<block wx:if="{{!hasShop}}">
+				<view class="container">
+					<image src="../../../images/logo.png"></image>
+					<button class="weui-btn" type="primary" data-type="applyStore" bindtap="navigat">新建店铺</button>
+				</view>
+			</block>
+			<block wx:else>
+				<view class="weui-cell">
+					<view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+						<image src="{{imgSrc}}" style="width: 50px; height: 50px; display: block" />
+					</view>
+					<view class="weui-cell__bd">
+						<view>{{shop.shopName}}</view>
+						<view style="font-size: 13px;color: #888888;">更新时间：{{shop.addTime}}</view>
+					</view>
+					<view class="cell-right">
+						<block wx:if="{{shop.flag}}">
+							<button class="weui-btn mini-btn" type="primary" size="mini">审核成功</button>
+						</block>
+						<block wx:else>
+							<button class="weui-btn mini-btn warn" type="primary" size="mini">审核中</button>
+						</block>
+					</view>
+				</view>
+			</block>
+		</view>
+		<view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+			<block wx:if="{{hasShop && !shop.flag}}">
+				<view class="weui-cell">
+					<view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+						<image src="{{imgSrc}}" style="width: 50px; height: 50px; display: block" />
+					</view>
+					<view class="weui-cell__bd">
+						<view>{{shop.shopName}}</view>
+						<view style="font-size: 13px;color: #888888;">更新时间：{{shop.addTime}}</view>
+					</view>
+					<view class="cell-right">
+						<button class="weui-btn mini-btn warn" type="primary" size="mini">审核中</button>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view>
+					您还未有任何信息
+				</view>
+			</block>
+		</view>
+		<view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+			<block wx:if="{{hasShop && shop.flag}}">
+				<view class="weui-cell">
+					<view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+						<image src="{{imgSrc}}" style="width: 50px; height: 50px; display: block" />
+					</view>
+					<view class="weui-cell__bd">
+						<view>{{shop.shopName}}</view>
+						<view style="font-size: 13px;color: #888888;">更新时间：{{shop.addTime}}</view>
+					</view>
+					<view class="cell-right">
+						<button class="weui-btn mini-btn" type="primary" size="mini">审核成功</button>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<view>您还未有任何信息</view>
+			</block>
+		</view>
+	</view>
+</view>

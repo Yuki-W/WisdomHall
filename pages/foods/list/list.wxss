@@ -1,0 +1,57 @@
+page {
+  background-color: #f4f4f4;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+  padding: 26rpx;
+}
+
+.menu>text {
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+}
+
+.menuTittle {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.menuHeader {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.itemBasic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemBasic>text {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.itemBasic>view {
+  font-size: 24rpx;
+}
+
+.iconfont.icon_youjiantou {
+  font-size: 24rpx;
+  margin-left: 16rpx;
+}
+
+.menuHeader>text {
+  font-size: 24rpx;
+  color: #ccc;
+}

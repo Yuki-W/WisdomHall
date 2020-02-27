@@ -1,0 +1,58 @@
+.header{
+  padding: 20rpx;
+}
+.header>text{
+  font-size: 24rpx;
+  color: #bbb7b7;
+  margin-left: 40rpx;
+}
+.weui-navbar{
+  margin-top: 90rpx;
+}
+.menu{
+  margin: 40rpx 40rpx 0 40rpx;
+}
+.menu_item{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.menu_item>view{
+  width: 200rpx;
+  text-align: center;
+  padding: 10rpx 0;
+  border: 1px solid #0000001a;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  margin: 20rpx 10rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.transparent{ /* 占位 */
+  border: none;
+}
+.active_item{
+  color: rgb(80, 207, 131);
+  border: 1px solid rgb(168, 225, 168);
+  background-color: rgb(216, 243, 216);
+}
+.disabled{
+  border: 1px solid #ccc;
+  background-color: #e4e4e4;
+  color: #b6b5b5;
+  pointer-events: none;
+}
+
+.footer{
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  padding: 10rpx;
+  z-index: 99;
+  background-color: #fff;
+}
+button[type='warn']{
+  color: #fff;
+  background-color: #fa5151;
+  border-radius: 40rpx;
+}

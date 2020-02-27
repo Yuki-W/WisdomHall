@@ -1,0 +1,22 @@
+page{
+  background-color: #f4f4f4;
+}
+.weui-navbar{
+  background-color: #fff;
+}
+.container{
+  background-color: #fff;
+  height: 100vh;
+}
+.weui-cell{
+  background-color: #fff;
+  flex-direction: row;
+  margin: 40rpx 20rpx 20rpx;
+}
+.cell-right .weui-btn.mini-btn{
+  font-weight: normal;
+  font-size: 24rpx;
+}
+.weui-btn.warn{
+  background-color: red;
+}

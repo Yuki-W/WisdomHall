@@ -1,0 +1,79 @@
+page{
+  background-color: #f4f4f4;
+}
+.header{
+  height: 300rpx;
+  background-color: red;
+}
+/* 开店流程 */
+.process{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 40rpx 30rpx;
+}
+.process>text{
+  font-size: 38rpx;
+  text-align: center;
+}
+.step{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.step>.step-item{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.step-item>image{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto 20rpx;
+}
+
+/* 开店准备 */
+.plan{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding-top: 40rpx;
+}
+.plan>text{
+  text-align: center;
+}
+.plan .plan-title{
+  font-size: 36rpx;
+}
+.plan .plan-tips{
+  font-size: 24rpx;
+}
+.transparent{
+  height: 170rpx;
+}
+.weui-media-box__hd_in-appmsg {
+  width: 200rpx;
+  height: 160rpx;
+}
+
+/* 底部提交按钮 */
+.footer{
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  background-color: #fff;
+  width: 100vw;
+  box-shadow:0px -3px 5px #C7C7C7;
+  height:170rpx;
+  box-sizing: border-box;
+}
+.footer .weui-btn{
+  width: 90vw;
+  margin-top: 0;
+  margin-bottom: 20rpx;
+}

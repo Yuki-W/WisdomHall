@@ -1,0 +1,7 @@
+<!-- 订单管理 -->
+<block wx:if="{{!isShow}}">
+<text>您还未有上线的店铺，请先去【我的店铺】中管理</text>
+</block>
+<block wx:else>
+  <view>欢迎加入，可以开店</view>
+</block>

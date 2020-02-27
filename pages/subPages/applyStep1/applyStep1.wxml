@@ -1,0 +1,165 @@
+<!--开店申请 第一步-->
+<scroll-view scroll-y="true">
+	<view class="menu-item" data-type="category" bindtap="handle">
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">经营品类</view>
+			</view>
+			<view class="weui-cell__bd">
+				<view class="category weui-select weui-select_in-select-after">
+					<block wx:if="{{marjor && (!minor) }}">
+						<text>【主营】{{marjor}}</text>
+					</block>
+					<block wx:elif="{{minor && marjor}}">
+						<text>【主营】{{marjor}}</text>
+						<text>【次营】{{minor}}</text>
+					</block>
+					<text wx:else>请选择经营类别</text>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="menu-item">
+		<view class="weui-cell weui-cell_select" data-type="address" bindtap="handle">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">店铺地址</view>
+			</view>
+			<view class="weui-cell__bd">
+				<view wx:if="{{!location}}" class="weui-select weui-select_in-select-after">标记店铺地址</view>
+				<block wx:else>
+					<view class="address weui-select weui-select_in-select-after">{{location.address}}</view>
+				</block>
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input">
+			<view class="weui-cell__hd transparent_view">
+				<view class="weui-label">门牌号<text>\n(非必填)</text></view>
+			</view>
+			<view class="weui-cell__bd">
+				<block wx:if="{{code.length > 0}}">
+					<input data-type="code" bindblur="handle" class="weui-input" value="{{code}}" />
+				</block>
+				<block wx:else>
+					<input data-type="code" bindblur="handle" class="weui-input" placeholder="详细地址 例：5号楼101室" />
+				</block>
+			</view>
+		</view>
+	</view>
+
+	<view class="menu-item">
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">门脸图</view>
+			</view>
+			<view class="weui-cell__bd">
+				<view class="menu-item-title">
+					<text>需拍出完整门匾、门框</text>
+					<text class="example" data-item="0" bindtap="show">示例图</text>
+					<view wx:if="{{logo.length === 0}}" class="weui-uploader__input-box">
+						<view class="weui-uploader__input" data-type="logo" bindtap="handle"></view>
+					</view>
+					<block wx:else>
+						<view class="iconImg">
+							<view class="weui-uploader__file" data-type="logo" bindtap="previewImage" id="{{logo[0]}}">
+								<image class="weui-uploader__img" src="{{logo[0]}}" mode="aspectFill" />
+							</view>
+							<i class="iconfont icondel" data-type="logo" bindtap="clear"></i>
+						</view>
+					</block>
+				</view>
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">门店牌匾名称</view>
+			</view>
+			<view class="weui-cell__bd">
+				<block wx:if="{{shopName.length > 0}}">
+					<input data-type="shopName" bindblur="handle" class="weui-input" value="{{shopName}}" />
+				</block>
+				<block wx:else>
+					<input data-type="shopName" bindblur="handle" class="weui-input" placeholder="需与门脸图牌匾一致" />
+				</block>
+			</view>
+		</view>
+	</view>
+
+	<view class="menu-item">
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">店内环境图</view>
+			</view>
+			<view class="weui-cell__bd">
+				<view class="menu-item-title">
+					<text>需真实反映用餐环境</text>
+					<text class="example" data-item="1" bindtap="show">示例图</text>
+					<view wx:if="{{eneviro.length === 0}}" class="weui-uploader__input-box">
+						<view class="weui-uploader__input" data-type="eneviro" bindtap="handle"></view>
+					</view>
+					<block wx:else>
+						<view class="iconImg">
+							<view class="weui-uploader__file" data-type="eneviro" bindtap="previewImage" id="{{eneviro[0]}}">
+								<image class="weui-uploader__img" src="{{eneviro[0]}}" mode="aspectFill" />
+							</view>
+							<i class="iconfont icondel" data-type="eneviro" bindtap="clear"></i>
+						</view>
+					</block>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="menu-item">
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">联系人</view>
+			</view>
+			<view class="weui-cell__bd">
+				<block wx:if="{{person.length > 0}}">
+					<input data-type="person" bindblur="handle" class="weui-input" value="{{person}}" />
+				</block>
+				<block wx:else>
+					<input data-type="person" bindblur="handle" class="weui-input" placeholder="请输入联系人姓名" value="{{clearInput}}" />
+				</block>
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_select">
+			<view class="weui-cell__hd weui-cell__hd_in-select-after">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-label">联系电话</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input wx:if="{{tel.length > 0}}" class="weui-input" placeholder="{{tel}}" disabled />
+				<input wx:else class="weui-input" placeholder="便于后续管理员与您联系" />
+			</view>
+		</view>
+	</view>
+	<view class="transparent"></view>
+</scroll-view>
+<view class="footer">
+	<button class="weui-btn" type="primary" bindtap="next">下一步</button>
+</view>
+
+<!-- 遮罩层 -->
+<view class="mask {{isShow?'show':''}}">
+	<!-- 弹窗框 -->
+	<view class="toast">
+		<!-- 内容 -->
+		<view class="toast_content">
+			<text class="toast_title">注意事项</text>
+			<text class="toast_item">{{toastTitle[index]}}</text>
+			<image src="{{toastImg[index]}}"></image>
+		</view>
+		<!-- 取消按钮 -->
+		<view class="toast_cancel">
+			<i class="iconfont iconguanbi" bindtap="cancel"></i>
+		</view>
+	</view>
+</view>

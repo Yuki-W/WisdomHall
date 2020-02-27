@@ -1,0 +1,17 @@
+<!-- 城市定位 -->
+
+<!-- 可视地图 -->
+<map id="map" bindregionchange="regionChange" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{scale}}" style="width:{{mapw}};height:{{maph}}">
+  <cover-image class="img-map" src="../../../images/center.png"></cover-image>
+</map>
+
+<!-- 附近地址信息 -->
+<scroll-view >
+  <view class="ul">
+    <text class="ul_li_title">当前定位：</text>
+    <text class="ul_li_address">{{address}}</text>
+  </view>
+</scroll-view>
+<view class="footer">
+  <button class="weui-btn" type="primary" bindtap="submit">确定地址</button>
+</view>

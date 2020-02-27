@@ -1,0 +1,62 @@
+<!--资质信息-->
+<scroll-view scroll-y="true">
+<!-- 顶部提示框 -->
+<view class="tip"><i class="iconfont iconlaba"></i>齐全有效的合规资质可一次过审~</view>
+<!-- 营业执照 -->
+<view class="menu-item">
+	<view class="item-header">
+		<text class="item-title">营业执照上传</text>
+		<text class="item-tip" data-item="0" bindtap="show">证件要求</text>
+	</view>
+	<view class="item-content">
+		<view wx:if="{{business.length===0}}" class="weui-uploader__input-box">
+			<view class="weui-uploader__input" data-type="business" bindtap="handle"></view>
+		</view>
+		<block wx:else>
+			<view class="weui-uploader__file" data-type="business" bindtap="previewImage" id="{{business[0]}}">
+				<image class="weui-uploader__img" src="{{business[0]}}" mode="aspectFill"/>
+			</view>
+				<view data-type="business" bindtap="reUpload" class="clear">清除上传</view>
+		</block>
+	</view>
+</view>
+<!-- 许可证 -->
+<view class="menu-item">
+	<view class="item-header">
+		<text class="item-title">许可证上传</text>
+		<text class="item-tip" data-item="1" bindtap="show">证件要求</text>
+	</view>
+	<view class="item-content">
+		<view wx:if="{{licence.length===0}}" class="weui-uploader__input-box">
+			<view class="weui-uploader__input" data-type="licence" bindtap="handle"></view>
+		</view>
+		<block wx:else>
+			<view class="weui-uploader__file" data-type="licence" bindtap="previewImage" id="{{licence[0]}}">
+				<image class="weui-uploader__licence" src="{{licence[0]}}" mode="aspectFill"/>
+			</view>
+			<view data-type="licence" bindtap="reUpload" class="clear">清除上传</view>
+		</block>
+	</view>
+</view>
+<view class="transparent"></view>
+</scroll-view>
+
+<view class="footer">
+		<button class="weui-btn" type="primary" bindtap="submit">提交</button>
+</view>
+
+<view class="mask {{isShow?'show':''}}">
+	<!-- 弹窗框 -->
+	<view class="toast">
+		<!-- 内容 -->
+		<view class="toast_content">
+			<text class="toast_title">注意事项</text>
+			<text class="toast_item">{{toastTitle}}</text>
+			<image src="{{toastImg[index]}}"></image>
+		</view>
+		<!-- 取消按钮 -->
+		<view class="toast_cancel">
+			<i class="iconfont iconguanbi" bindtap="cancel"></i>
+		</view>
+	</view>
+</view>

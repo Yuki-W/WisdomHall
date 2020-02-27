@@ -1,0 +1,120 @@
+<!-- 我要开店 -->
+<scroll-view scroll-y="true">
+
+	<!--我要开店-->
+	<view class="header"></view>
+	<!-- 开店流程 -->
+	<view class="process">
+		<text>开店流程</text>
+		<view class="step">
+			<view class="step-item">
+				<image src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/steps1.png" />
+				<text>提交申请</text>
+			</view>
+			<view class="step-item">
+				<image src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/steps2.png" />
+				<text>店铺审核</text>
+			</view>
+			<view class="step-item">
+				<image src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/steps3.png" />
+				<text>录入菜单</text>
+			</view>
+			<view class="step-item">
+				<image src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/steps4.png" />
+				<text>门店上线</text>
+			</view>
+		</view>
+	</view>
+
+	<!-- 开店准备 -->
+	<view class="plan">
+		<text>开店前请准备好以下</text>
+		<text class="plan-title">6种图片资料</text>
+		<text class="plan-tips">(建议准备齐全后进行申请操作，不同品类证件要求略有不同，具体以填写页面要求为准)</text>
+		<view class="weui-panel__bd">
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/door-pic.jpeg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">门脸图照片</view>
+					<view class="weui-media-box__desc">·需拍出完整牌匾、门框</view>
+					<view class="weui-media-box__desc">·建议正对店铺2米处拍摄</view>
+				</view>
+			</navigator>
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://shadow.elemecdn.com/lib/kd-resource@0.1.0/indoor-pic.jpeg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">店内环境图照片</view>
+					<view class="weui-media-box__desc">·需真实反映用餐环境</view>
+					<view class="weui-media-box__desc">·拍摄整体就餐区域</view>
+					<view class="weui-media-box__desc">·请勿局部拍摄桌椅</view>
+				</view>
+			</navigator>
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://s3plus.meituan.net/v1/mss_6b7c26b3db4c4bbebdbb4d7a9bb76633/images/info_prompt/st03.jpg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">法定代表人手持身份证正面照</view>
+					<view class="weui-media-box__desc">·正面需清晰拍出人物五官及身份证信息</view>
+					<view class="weui-media-box__desc">·需拍摄手持身份证正面</view>
+					<view class="weui-media-box__desc">·不可自拍、不可只拍身份证</view>
+					<view class="weui-media-box__desc">·可使用临时身份证、港澳台同胞及外国友人需联系业务经理合作</view>
+				</view>
+			</navigator>
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://s3plus.meituan.net/v1/mss_6b7c26b3db4c4bbebdbb4d7a9bb76633/images/info_prompt/st04.jpg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">法定代表人手持身份证反面照</view>
+					<view class="weui-media-box__desc">·需清晰展示人物五官及身份证信息</view>
+					<view class="weui-media-box__desc">·需拍摄手持身份证反面</view>
+					<view class="weui-media-box__desc">·不可自拍、不可只拍身份证</view>
+				</view>
+			</navigator>
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://s3plus.meituan.net/v1/mss_6b7c26b3db4c4bbebdbb4d7a9bb76633/images/info_prompt/st05.jpg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">营业执照</view>
+					<view class="weui-media-box__desc">·需文字清晰、边框完整、露出国徽</view>
+					<view class="weui-media-box__desc">·复印件需加盖印章</view>
+					<view class="weui-media-box__desc">·可提供监管部门认可的具有营业执照同等法律效力的证件</view>
+				</view>
+			</navigator>
+			<navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+					<image class="weui-media-box__thumb" src="https://s3plus.meituan.net/v1/mss_6b7c26b3db4c4bbebdbb4d7a9bb76633/images/info_prompt/st06.jpg" />
+				</view>
+				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+					<view class="weui-media-box__title">许可证</view>
+					<view class="weui-media-box__desc">·需文字清晰、边框完整</view>
+					<view class="weui-media-box__desc">·复印件需加盖印章</view>
+					<view class="weui-media-box__desc">·可使用当地监管部门认可的、具有同食品经营许可证同等法律效力的证件</view>
+				</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="transparent"></view>
+</scroll-view>
+
+<!-- 提交按钮 -->
+<view class="footer">
+	<checkbox-group bindchange="bindAgreeChange">
+		<label class="weui-agree" for="weuiAgree">
+			<view class="weui-agree__text">
+				<checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+				<view class="weui-agree__checkbox-icon">
+					<icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+				</view>
+				我已阅读并同意<navigator url="" class="weui-agree__link">《相关条款》</navigator>
+			</view>
+		</label>
+	</checkbox-group>
+	<button class="weui-btn" type="primary" disabled="{{disabled}}" bindtap="submit">我准备好了</button>
+</view>

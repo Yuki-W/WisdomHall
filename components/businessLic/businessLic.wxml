@@ -1,0 +1,130 @@
+<!-- 营业执照子组件 -->
+
+<view class="menu-item">
+			<!-- 注册号/统一社会信用代码 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">注册号/统一社会信用代码</view>
+				</view>
+				<view class="weui-cell__bd">
+					<!-- <block wx:if="{{legalName.length > 0}}">
+				<input data-type="legalName" bindblur="handle" class="weui-input" value="{{legalName}}" />
+			</block>
+			<block wx:else> -->
+					<input data-type="legalName" bindblur="handle" class="weui-input" placeholder="请填写注册号或者社会信用代码" />
+					<!-- </block> -->
+				</view>
+			</view>
+			<!-- 名称 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">名称</view>
+				</view>
+				<view class="weui-cell__bd">
+					<!-- <block wx:if="{{idCard.length > 0}}">
+				<input data-type="idCard" bindblur="handle" class="weui-input" value="{{idCard}}" />
+			</block>
+			<block wx:else> -->
+					<input data-type="idCard" bindblur="handle" class="weui-input" placeholder="请填写营业执照上的名称" />
+					<!-- </block> -->
+				</view>
+			</view>
+			<!-- 法定代表人/经营者 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">法定代表人/经营者</view>
+				</view>
+				<view class="weui-cell__bd">
+					<!-- <block wx:if="{{contactNumber.length > 0}}">
+				<input data-type="contactNumber" bindblur="handle" class="weui-input" value="{{contactNumber}}" />
+			</block>
+			<block wx:else> -->
+					<input data-type="contactNumber" bindblur="handle" class="weui-input" placeholder="请填写经营者/法定代表人姓名" />
+					<!-- </block> -->
+				</view>
+			</view>
+			<!-- 经营场所/住所 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">经营场所/住所</view>
+				</view>
+				<view class="weui-cell__bd">
+					<!-- <block wx:if="{{contactNumber.length > 0}}">
+				<input data-type="contactNumber" bindblur="handle" class="weui-input" value="{{contactNumber}}" />
+			</block>
+			<block wx:else> -->
+					<input data-type="contactNumber" bindblur="handle" class="weui-input" placeholder="请按照执照上显示地址填写" />
+					<!-- </block> -->
+				</view>
+			</view>
+		</view>
+
+		<view class="menu-item">
+			<view class="weui-cell weui-cell_switch">
+				<i class="iconfont icon_bitian"></i>
+				<view class="weui-cell__bd">执照有效期</view>
+				<view class="weui-cell__ft">长期有效
+					<switch checked />
+				</view>
+			</view>
+		</view>
+
+		<view class="menu-item">
+			<!-- 注册/成立时间 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">注册/成立时间</view>
+				</view>
+				<view class="weui-cell__bd">
+					<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+						<input class="weui-input" placeholder="请选择注册/成立日期" value="{{date}}"></input>
+					</picker>
+				</view>
+			</view>
+			<!-- 发证/登记机关 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">发证/登记机关</view>
+				</view>
+				<view class="weui-cell__bd">
+					<input data-type="legalName" bindblur="handle" class="weui-input" placeholder="请填写右下角红章内文字信息" />
+				</view>
+			</view>
+
+      <!-- 核准日期 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<i class="iconfont icon_bitian"></i>
+					<view class="weui-label">核准日期</view>
+				</view>
+				<view class="weui-cell__bd">
+					<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+						<input class="weui-input" placeholder="请选择盖章处日期" value="{{date}}"></input>
+					</picker>
+				</view>
+			</view>
+			<!-- 经营范围 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd transparent_view                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ">
+					<view class="weui-label">经营范围<text>\n(非必填)</text></view>
+				</view>
+				<view class="weui-cell__bd">
+					<input data-type="legalName" bindblur="handle" class="weui-input" placeholder="若没有经营范围可不填" />
+				</view>
+			</view>
+      <!-- 注册资本 -->
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd transparent_view">
+					<view class="weui-label">注册资本<text>\n(非必填)</text></view>
+				</view>
+				<view class="weui-cell__bd">
+					<input data-type="legalName" bindblur="handle" class="weui-input" placeholder="若没有注册资本可不填" />
+				</view>
+			</view>
+		</view>

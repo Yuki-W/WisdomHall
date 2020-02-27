@@ -1,0 +1,116 @@
+page{
+  background-color: #f4f4f4;
+}
+.menu-title{
+  font-size: 28rpx;
+  color: #c6c6c6;
+  margin: 40rpx 0 20rpx 40rpx;
+}
+.menu-item {
+  padding: 20rpx;
+  padding-left: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.iconfont.icon_bitian {
+  color: red;
+}
+.weui-cell__hd{
+  display: flex;
+  align-items: center;
+}
+.menu-item-title>.example {
+  float: right;
+  color: #07c160;
+}
+.footer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+.footer .weui-btn{
+  width: 90vw;
+  font-weight: normal;
+}
+
+.mask {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(79, 75, 75, 0.5);
+}
+.mask.show{
+  display: block;
+}
+
+.toast {
+  width: 80vw;
+  height: 58vh;
+  position: fixed;
+  z-index: 101;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+  box-sizing: border-box;
+}
+
+.toast_content {
+  height: 50vh;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.toast_item{
+  text-align: left;
+  font-size: 24rpx;
+  color: rgb(182, 182, 182);
+}
+.toast_content>image{
+  width: 70vw;
+  height: 60vh;
+  margin-top: 20rpx;
+}
+.toast_title{
+  font-weight: bold;
+  font-size: 28rpx;
+  text-align: left;
+}
+
+.toast_cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+}
+
+.toast_cancel>.iconfont.iconguanbi {
+  font-size: 70rpx;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.iconImg{
+  width: 150rpx;
+  height: 150rpx;
+  position: relative;
+}
+.iconfont.icondel{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  font-size: 30rpx;
+  color: red;
+  font-weight: bold;
+  transform: translate(22px,-5px);
+}

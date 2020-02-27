@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/orders/list/list",
+    "pages/foods/list/list",
+    "pages/subPages/login/login",
+    "pages/subPages/applyLog/applyLog",
+    "pages/subPages/applyStore/applyStore",
+    "pages/subPages/applyStep1/applyStep1",
+    "pages/subPages/applyStep2/applyStep2",
+    "pages/subPages/applyStep3/applyStep3",
+    "pages/subPages/category/category",
+    "pages/subPages/address/address",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位展示"
+    }
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#febd7b",
+    "borderStyle": "black",
+    "list": [
+      {
+      "pagePath": "pages/foods/list/list",
+      "text": "门店管理",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_s.png"
+    },
+      {
+      "pagePath": "pages/orders/list/list",
+      "text": "订单管理",
+      "iconPath": "images/order.png",
+      "selectedIconPath": "images/order_s.png"
+    },
+      {
+      "pagePath": "pages/index/index",
+      "text": "我的店铺",
+      "iconPath": "images/user.png",
+      "selectedIconPath": "images/user_s.png"
+    }
+  ]
+  }
+}

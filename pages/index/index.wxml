@@ -1,0 +1,47 @@
+<!-- 我的店铺 -->
+<view class="avatar">
+	<image wx:if="{{!hasUserInfo}}" src="" mode="aspectFill"></image>
+	<!-- 获取用户信息成功，显示用户头像 -->
+	<block wx:else>
+		<image src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+	</block>
+</view>
+<view class="content">
+	<view>
+		<text>200</text>
+		<view>本月销售额</view>
+	</view>
+	<view>
+		<text>234,233</text>
+		<view>累计销售额</view>
+	</view>
+	<view>
+		<!-- 图表显示 -->
+		<view>查看更多</view>
+	</view>
+</view>
+<view class="menu">
+	<view class="weui-cell__bd" data-type="applyLog" bindtap="navigat">
+		<view style="display: inline-block; vertical-align: middle">申请记录</view>
+		<view class="weui-badge" style="margin-left: 5px;">New</view>
+    <i class="iconfont icon_youjiantou"></i>
+	</view>
+</view>
+<view class="menu">
+	<view>评价管理
+		<i class="iconfont icon_youjiantou"></i>
+	</view>
+	<view>促销管理
+		<i class="iconfont icon_youjiantou"></i>
+	</view>
+	<view>最新公告
+	</view>
+</view>
+<view class="menu">
+	<view class="weui-cell weui-cell_switch">
+		<view class="weui-cell__bd">开店</view>
+		<view class="weui-cell__ft">
+			<switch checked />
+		</view>
+	</view>
+</view>

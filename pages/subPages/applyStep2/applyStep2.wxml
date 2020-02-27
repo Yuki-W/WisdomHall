@@ -1,0 +1,121 @@
+<!-- 法定代表人信息 -->
+<view class="menu-title">实名认证</view>
+<view class="menu-item">
+	<!-- 姓名 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<i class="iconfont icon_bitian"></i>
+			<view class="weui-label">姓名</view>
+		</view>
+		<view class="weui-cell__bd">
+			<block wx:if="{{legalName.length > 0}}">
+				<input data-type="legalName" bindblur="handle" class="weui-input" value="{{legalName}}" />
+			</block>
+			<block wx:else>
+				<input data-type="legalName" bindblur="handle" class="weui-input" placeholder="请输入法定代表人姓名" value="{{legalName}}" />
+			</block>
+		</view>
+	</view>
+	<!-- 身份证号 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<i class="iconfont icon_bitian"></i>
+			<view class="weui-label">身份证号</view>
+		</view>
+		<view class="weui-cell__bd">
+			<block wx:if="{{idCard.length > 0}}">
+				<input data-type="idCard" bindblur="handle" class="weui-input" value="{{idCard}}" />
+			</block>
+			<block wx:else>
+				<input data-type="idCard" bindblur="handle" class="weui-input" placeholder="请输入身份证号" />
+			</block>
+		</view>
+	</view>
+	<!-- 手机号 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<i class="iconfont icon_bitian"></i>
+			<view class="weui-label">手机号</view>
+		</view>
+		<view class="weui-cell__bd">
+			<block wx:if="{{contactNumber.length > 0}}">
+				<input data-type="contactNumber" bindblur="handle" class="weui-input" value="{{contactNumber}}" />
+			</block>
+			<block wx:else>
+				<input data-type="contactNumber" bindblur="handle" class="weui-input" placeholder="方便后续工作人员与您联系" value="{{contactNumber}}" />
+			</block>
+		</view>
+	</view>
+</view>
+<!-- 上传正面照 -->
+<view class="menu-item">
+	<view class="weui-cell weui-cell_select">
+		<view class="weui-cell__hd weui-cell__hd_in-select-after">
+			<i class="iconfont icon_bitian"></i>
+			<view class="weui-label">上传正面照</view>
+		</view>
+		<view class="weui-cell__bd">
+			<view class="menu-item-title">
+				<text>上传身份证正面照</text>
+				<text class="example" data-item="0" bindtap="show">示例图</text>
+					<view wx:if="{{front.length === 0}}" class="weui-uploader__input-box">
+						<view class="weui-uploader__input" data-type="front" bindtap="handle"></view>
+					</view>
+					<block wx:else>
+					<view class="iconImg">
+						<view class="weui-uploader__file" data-type="front" bindtap="previewImage" id="{{front[0]}}">
+							<image class="weui-uploader__img" src="{{front[0]}}" mode="aspectFill" />
+						</view>
+						<i class="iconfont icondel" data-type="front" bindtap="clear"></i>
+						</view>
+					</block>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 上传反面照 -->
+<view class="menu-item">
+	<view class="weui-cell weui-cell_select">
+		<view class="weui-cell__hd weui-cell__hd_in-select-after">
+			<i class="iconfont icon_bitian"></i>
+			<view class="weui-label">上传反面照</view>
+		</view>
+		<view class="weui-cell__bd">
+			<view class="menu-item-title">
+				<text>上传身份证反面照</text>
+				<text class="example" data-item="1" bindtap="show">示例图</text>
+					<view wx:if="{{back.length === 0}}" class="weui-uploader__input-box">
+						<view class="weui-uploader__input" data-type="back" bindtap="handle"></view>
+					</view>
+					<block wx:else>
+					<view class="iconImg">
+						<view class="weui-uploader__file" data-type="back" bindtap="previewImage" id="{{back[0]}}">
+							<image class="weui-uploader__img" src="{{back[0]}}" mode="aspectFill" />
+						</view>
+						<i class="iconfont icondel" data-type="back" bindtap="clear"></i>
+						</view>
+					</block>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="footer">
+	<button class="weui-btn" type="primary" bindtap="next">实名认证，提交下一步</button>
+</view>
+
+<!-- 遮罩层 -->
+<view class="mask {{isShow?'show':''}}">
+	<!-- 弹窗框 -->
+	<view class="toast">
+		<!-- 内容 -->
+		<view class="toast_content">
+			<text class="toast_title">注意事项</text>
+			<text class="toast_item">{{toastTitle[index]}}</text>
+			<image src="{{toastImg[index]}}"></image>
+		</view>
+		<!-- 取消按钮 -->
+		<view class="toast_cancel">
+			<i class="iconfont iconguanbi" bindtap="cancel"></i>
+		</view>
+	</view>
+</view>

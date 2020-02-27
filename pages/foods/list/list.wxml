@@ -1,0 +1,21 @@
+<!--商品管理-->
+<block wx:if="{{!isShow}}">
+	<text>您还未有上线的店铺，请先去【我的店铺】中管理</text>
+</block>
+<block wx:else>
+	<!-- 门店基础信息 -->
+	<view class="menu">
+		<view class="menuTittle">门店信息</view>
+		<view class="menuHeader">
+			<view class="itemBasic">
+        <text>基础信息</text>
+				<view>编辑<i class="iconfont icon_youjiantou"></i></view>
+			</view>
+			<text>管理门店营业时间、电话和地址等信息</text>
+		</view>
+    <text>商户分类：{{shop.marjor}}</text>
+    <text>联系电话：{{shop.tel}}</text>
+    <text>营业状态：{{status? '营业中':'休息中'}}</text>
+    <text>门店地址：{{shop.address}}</text>
+	</view>
+</block>

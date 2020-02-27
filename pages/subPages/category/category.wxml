@@ -1,0 +1,48 @@
+<!--经营品类别-->
+<view class="header">
+	<text>请必选一个主营分类，选填一个次营分类</text>
+</view>
+
+<!-- navbar -->
+<view class="weui-navbar">
+	<block wx:for-items="{{tabs}}" wx:key="index">
+		<view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+			<view class="weui-navbar__title">{{item}}</view>
+		</view>
+	</block>
+	<view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+</view>
+<!-- 内容 -->
+<view class="weui-tab__panel">
+	<view class="weui-tab__content">
+		<block wx:for="{{lists}}" wx:for-item="list" wx:key="{{list.id}}">
+			<view class="menu" id="{{list.id}}">
+				<text class="menu_title">{{list.type_name}}</text>
+				<view class="menu_item">
+					<block wx:for="{{list.categoriesList}}" wx:for-item="item" wx:key="index">
+					
+						<block wx:if="{{(list.id +'_'+index) === curIndex}}">
+							<block wx:if="{{isCurPage}}">
+								<view class="active_item" bindtap="cancel">{{item.name}}</view>
+							</block>
+							<block wx:else><view class="disabled">{{item.name}}</view></block>
+						</block>
+						<block wx:elif="{{(list.id +'_'+index) === oldIndex}}">
+							<block wx:if="{{!isCurPage}}">
+								<view class="active_item" bindtap="cancel">{{item.name}}</view>
+							</block>
+							<block wx:else><view class="disabled">{{item.name}}</view></block>
+						</block>
+						<!-- 选中样式 -->
+						<view data-item="0" data-index="{{list.id}}_{{index}}" data-type="{{item.name}}" bindtap="selection" wx:else>{{item.name}}</view>
+					</block>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+
+<!-- 底部 -->
+<view class="footer">
+	<button class="weui-btn" type="warn" bindtap="submit">确定</button>
+</view>

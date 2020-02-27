@@ -1,0 +1,25 @@
+.menu-item {
+  padding: 20rpx 20rpx 0 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.weui-cell__hd{
+  padding-right: 20rpx;
+}
+.weui-cell{
+  padding: 10rpx 0;
+}
+.weui-label{
+  font-size: 28rpx;
+}
+.iconfont.icon_bitian {
+  color: red;
+}
+.weui-cell__hd{
+  display: flex;
+  align-items: center;
+}
+.weui-cell__hd.transparent_view {
+  padding-left: 48rpx;
+}
