@@ -1,0 +1,147 @@
+page {
+  position: relative;
+  background-color: #f4f4f4;
+}
+.notData{
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu {
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  box-sizing: border-box;
+}
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 26rpx;
+  overflow: hidden;
+}
+.iconfont.icon_youjiantou {
+  margin-right: 20rpx;
+  font-size: 20px;
+}
+.menu-item text{
+  flex:1;
+}
+.inner.del{
+  width: 140rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(211, 21, 21);
+  transform: translateX(168rpx);
+  transition: all 0.4s;
+  margin-left:-168rpx;
+}
+.content{
+  transform: translateX(168rpx);
+  transition: all 0.4s;
+  margin-left:-168rpx;
+}
+.menu-item-active .iconfont.icon_youjiantou{
+  transform: translateX(-168rpx);
+  transition: all 0.4s;
+  margin-left:168rpx;
+  opacity: 0;
+}
+.menu-item-active .del,.menu-item-active .content{
+  transform: translateX(0);
+}
+
+.itemFixed {
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  right: 20rpx;
+  bottom: 20rpx;
+  width: 100vw;
+  z-index: 99;
+}
+
+.itemFixed .insert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: green;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+}
+
+.insert .iconfont.iconjiahao {
+  color: #fff;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.itemFixed text {
+  color: #fff;
+  font-size: 25rpx;
+  margin-top: -18rpx;
+
+}
+
+/* 弹出框区域设置 */
+.masking.hide{
+  display: none;
+}
+.masking{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(79, 75, 75, 0.5);
+}
+.masking .toast{
+  width: 60vw;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30rpx;
+  position: fixed;
+  top: 25%;
+  left: 20vw;
+  transform: translateX(-75%,-75%);
+  overflow: hidden;
+}
+.toast .toast-header{
+  height: 100rpx;
+  line-height: 80rpx;
+  background-color: rgb(106, 176, 197);
+  padding: 10rpx 20rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+.toast>input[type="text"]{
+  height: 100rpx;
+  margin-left: 20rpx;
+}
+.toast-bottom{
+  border-top: 1px solid #ccc;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.toast-bottom>text{
+  flex: 1;
+  text-align: center;
+}
+.toast-bottom>.cancel{
+  color: red;
+  border-right: 2rpx solid #ccc;
+}

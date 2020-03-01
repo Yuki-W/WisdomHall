@@ -1,9 +1,12 @@
 <!--测试页面-->
-<view class="weui-uploader__input-box">
+<!-- <view class="weui-uploader__input-box">
 	<view class="weui-uploader__input" bindtap="chooseImage"></view>
 </view>
 <block wx:if="{{url.length > 0}}">
 	<view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
 		<image class="weui-uploader__img" src='{{url}}' mode="aspectFill" />
 	</view>
-</block>
+</block> -->
+
+{{i}}
+<button bindtap="click">点击</button>

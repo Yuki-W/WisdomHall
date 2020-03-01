@@ -1,0 +1,42 @@
+<!--商品管理-->
+<block wx:if="{{!isShow}}">
+	<text>您还未有上线的店铺，请先去【我的店铺】中管理</text>
+</block>
+<block wx:else>
+	<scroll-view scroll-y>
+		<!-- 门店主图 -->
+		<view class="menu header">
+			<view class="itemConent">
+				<view class="menuTittle">门店主图</view>
+				<text>优质图片更吸引用户访问，增加曝光</text>
+			</view>
+			<view class="itemImg" mode="aspectFill" bindtap="changeLogo">
+				<image src="{{shopImg}}"></image>
+			</view>
+		</view>
+		<!-- 门店基础信息 -->
+		<view class="menu">
+			<view class="menuTittle">门店信息</view>
+			<view class="menuHeader">
+				<view class="itemBasic">
+					<text>基础信息</text>
+					<!-- <view>编辑<i class="iconfont icon_youjiantou"></i></view> -->
+				</view>
+				<text>管理门店基本信息</text>
+			</view>
+			<text>店铺名称：{{shop.shopName}}</text>
+			<text>联系电话：{{shop.tel}}</text>
+			<!-- <text>营业状态：{{status? '营业中':'休息中'}}</text> -->
+			<text>门店地址：{{shop.address}}</text>
+		</view>
+
+		<!-- 桌位录入 -->
+		<view class="menu header" bindtap="handle">
+			<view class="itemConent">
+				<view class="menuTittle">桌位设置</view>
+				<text>灵活设置桌位信息，高效管理门店</text>
+			</view>
+			<i class="iconfont icon_xiugai"></i>
+		</view>
+	</scroll-view>
+</block>

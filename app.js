@@ -53,5 +53,6 @@ App({
     is_login:false,  //是否登录标识
     hasShop:false,//店铺存在标识
     shop:null,//店铺信息
+    imgAPI:'http://172.20.10.7:8080/upload/'
   }
 })

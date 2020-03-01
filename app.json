@@ -1,8 +1,11 @@
 {
   "pages": [
+  
     "pages/index/index",
     "pages/orders/list/list",
-    "pages/foods/list/list",
+    "pages/store/list/list",
+    "pages/store/basicInfo/basicInfo",
+    "pages/store/table/table",
     "pages/subPages/login/login",
     "pages/subPages/applyLog/applyLog",
     "pages/subPages/applyStore/applyStore",
@@ -32,7 +35,7 @@
     "borderStyle": "black",
     "list": [
       {
-      "pagePath": "pages/foods/list/list",
+      "pagePath": "pages/store/list/list",
       "text": "门店管理",
       "iconPath": "images/home.png",
       "selectedIconPath": "images/home_s.png"

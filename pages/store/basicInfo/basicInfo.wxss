@@ -1,0 +1,23 @@
+.menu{
+  margin-top: 40rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f4f4f4;
+}
+.weui-select{
+  border-right: none;
+}
+picker{
+  text-align: center;
+}
+.pickerTime{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.pickerTime>view{
+  flex:1;
+}
+.pickerTime>picker{
+  width: 200rpx;
+}
