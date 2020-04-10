@@ -88,7 +88,6 @@ page {
   color: #fff;
   font-size: 25rpx;
   margin-top: -18rpx;
-
 }
 
 /* 弹出框区域设置 */

@@ -24,7 +24,7 @@ Page({
     this.setData({
       hasShop:app.globalData.hasShop,
       shop:shops,
-      imgSrc:`${app.globalData.imgAPI}${src}`
+      imgSrc:`http://localhost:8080/upload/${src}`
     })
   },
 

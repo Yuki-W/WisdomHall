@@ -1,0 +1,116 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding-top: 20rpx;
+}
+
+.header>view {
+  height: 60rpx;
+  width: 300rpx;
+  text-align: center;
+  background-color: rgb(155, 155, 155);
+  color: #fff;
+  border-radius: 30rpx;
+}
+.notData{
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weui-panel__bd {
+  margin-top: 80rpx;
+}
+
+.itemFixed {
+  position: fixed;
+  display: flex;
+  flex-direction: row-reverse;
+  right: 20rpx;
+  bottom: 20rpx;
+  width: 100vw;
+  z-index: 100;
+}
+
+.itemFixed .insert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100rpx;
+  height: 100rpx;
+  background-color: green;
+  border-radius: 50rpx;
+  box-sizing: border-box;
+}
+
+.insert .iconfont.iconjiahao {
+  color: #fff;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+
+.itemFixed text {
+  color: #fff;
+  font-size: 25rpx;
+  margin-top: -18rpx;
+}
+
+.weui-media-box_appmsg {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.inner{
+  display: flex;
+  flex-direction: row;
+  width: 280rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  transform: translateX(340rpx);
+  transition: all 0.4s;
+  margin-left: -170rpx;
+}
+.inner>view{
+  flex:1
+}
+.del{
+  background-color: rgb(211, 21, 21);
+}
+.update{
+  background-color: green;
+  /* transform: translateX(340rpx);
+  transition: all 0.4s;
+  margin-left: -340rpx; */
+}
+
+.weui-media-box__hd_in-appmsg {
+  transform: translateX(170rpx);
+  transition: all 0.4s;
+  margin-left: -170rpx;
+}
+.weui-media-box__bd_in-appmsg{
+  transform: translateX(300rpx);
+  transition: all 0.4s;
+  margin-left: -170rpx;
+}
+
+.menu-item-active .inner,
+.menu-item-active .weui-media-box__bd_in-appmsg,
+.menu-item-active .weui-media-box__hd_in-appmsg {
+  transform: translateX(0);
+}

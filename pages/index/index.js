@@ -3,9 +3,10 @@ const fetch = require('../../utils/fetch.js')
 Page({
   data: {},
   onLoad: function (options) {
-    this.getShopInfo();
   },
-
+  onShow(){
+    this.getShopInfo();
+},
   //页面跳转
   navigat(e) {
     // console.log(e);
@@ -17,7 +18,8 @@ Page({
 
   // 查找店铺是否存在
   getShopInfo() {
-    let tel = app.globalData.tel
+    let tel = wx.getStorageSync('tel')
+    console.log(tel)
     if (tel) {
       fetch("/shop/findShop", JSON.stringify({
         tel: tel

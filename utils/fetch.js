@@ -8,8 +8,7 @@ module.exports = function(path,data,method){
 
   return new Promise((resolve,reject) => {
     wx.request({
-      // url:  `http://127.0.0.1:8080/DianCan${path}`,  //接口地址
-      url:  `http://172.20.10.7:8080/DianCan${path}`,  //接口地址
+      url:  `http://localhost:8080/DianCan${path}`,  //接口地址
       method: method, //请求方法
       data: data,//参数
       success: resolve,

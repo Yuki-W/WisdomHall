@@ -1,0 +1,29 @@
+<!-- 添加 修改桌位信息 -->
+<view>
+	<view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">区域</view>
+			<view class="weui-cell__ft">{{tableClass}}</view>
+		</view>
+	</view>
+	<view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">桌位编号</view>
+			<view class="weui-cell__ft">
+				<input type="text" maxlength="11" bindinput="handle" data-type="tableID" value="{{tableID}}" placeholder="必填" placeholder-style="color:red"></input>
+			</view>
+		</view>
+	</view>
+	<view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell">
+			<view class="weui-cell__bd">容纳人数</view>
+			<view class="weui-cell__ft">
+				<input type="text" bindinput="handle" data-type="availNum" value="{{availNum}}" placeholder="必填" placeholder-style="color:red"></input>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="footer">
+	<view data-type="cancel" bindtap="handle">清空</view>
+	<view data-type="submit" bindtap="handle">{{flag?'修改':'添加'}}</view>
+</view>

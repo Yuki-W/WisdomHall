@@ -1,0 +1,19 @@
+.weui-cell{
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+.set_price{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer{
+  width: 100vw;
+}
+.footer>button{
+  margin: 40rpx;
+  width: 90vw;
+  background-color: #FF9C35;
+  color: #fff;
+}

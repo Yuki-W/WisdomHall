@@ -1,0 +1,76 @@
+<view>
+	<!-- 图片上传 -->
+	<view class="weui-cell weui-cell_input">
+		<view class="weui-cell__hd">
+			<view class="weui-label">图片上传</view>
+		</view>
+		<block wx:if="{{files.length===0}}">
+			<view class="weui-uploader__input-box">
+				<view class="weui-uploader__input" bindtap="chooseImage"></view>
+	</view>
+		</block>
+		<block wx:else>
+			<view class="weui-uploader__file" bindtap="previewImage">
+				<image class="weui-uploader__img" src="{{files[0]}}" mode="aspectFill" />
+			</view>
+		</block>
+</view>
+<!-- 菜品名称 -->
+<view class="weui-cell weui-cell_input">
+	<view class="weui-cell__hd">
+		<view class="weui-label">菜品名称</view>
+	</view>
+	<view class="weui-cell__bd">
+		<input class="weui-input" value="{{food_name}}" placeholder="请输入菜品名称" bindinput="nameHandle" />
+	</view>
+</view>
+<!-- 菜品分类 -->
+<view class="weui-cell weui-cell_select">
+	<view class="weui-cell__hd weui-cell__hd_in-select-after">
+		<view class="weui-label">菜品类别</view>
+	</view>
+	<view class="weui-cell__bd">
+		<picker bindchange="bindCountryChange" value="{{curIndex}}" range="{{nameList}}">
+			<view class="weui-select weui-select_in-select-after">{{nameList[curIndex]}}</view>
+		</picker>
+	</view>
+</view>
+<!-- 上架状态 -->
+<!-- <view class="weui-cells weui-cells_after-title">
+		<view class="weui-cell weui-cell_switch set_price">
+			<view class="weui-label">上架状态</view>
+			<view>
+				<input type="text" placeholder="{{checkOnStatus?'上架':'下架'}}" disabled />
+			</view>
+			<view class="weui-cell__ft">
+				<switch checked data-type="status" bindchange="switChange" />
+			</view>
+		</view>
+	</view> -->
+<!-- 菜品价格 -->
+<view class="weui-cell weui-cell_input">
+	<view class="weui-cell__hd">
+		<view class="weui-label">菜品价格</view>
+	</view>
+	<view class="weui-cell__bd">
+		<input class="weui-input" value="{{food_price}}" placeholder="请填写菜品价格（单位:元）" bindinput="priceHandle" />
+	</view>
+</view>
+
+<!-- 原价 -->
+<view class="weui-cells weui-cells_after-title">
+	<view class="weui-cell weui-cell_switch set_price">
+		<view class="weui-label" style="color:{{!checkStatus?'#ccc':'none'}}">原价</view>
+		<view>
+			<input type="text" value="{{!checkStatus?'':old_price}}" disabled="{{!checkStatus}}" placeholder="{{!checkStatus?'未设置':'请设置原价（单位:元）'}}" placeholder-style="color:{{!checkStatus?'#ccc':'none'}}" bindinput="oldPriHandle" />
+		</view>
+		<view class="weui-cell__ft">
+			<switch data-type="price" bindchange="switChange" />
+		</view>
+	</view>
+</view>
+
+<view class="footer">
+	<button bindtap="submit">提交</button>
+</view>
+</view>

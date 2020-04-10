@@ -1,0 +1,26 @@
+<view>
+	<view wx:for="{{listData}}" wx:key="{{index}}" class="list-item">
+		<view>{{item.name}}</view>
+		<view class="list-right">
+			<i class="iconfont icon_xiugai" data-type="update" data-item="{{item}}" bindtap="handle" />
+			<i class="iconfont iconshanchu" data-type="del" data-item="{{item}}" bindtap="handle" />
+		</view>
+	</view>
+</view>
+<view class="translate"></view>
+<!-- 底部 -->
+<view class="footer">
+	<button class="weui-btn" type="primary" data-type="add" bindtap="handle">添加分类</button>
+</view>
+
+<!-- 输入弹出框 -->
+<view class="masking {{isShowToast?'':'hide'}}">
+	<view class="toast">
+		<view class="toast-header">类别设置</view>
+		<input type="text" placeholder="请填写菜品类别名" bindinput="input" value="{{value}}"></input>
+		<view class="toast-bottom">
+			<text class="cancel" data-type="add" bindtap="handle">取消</text>
+				<text class="submit" bindtap="insert">{{!isHide?'确定':'修改'}}</text>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,112 @@
+/* 左侧菜单样式 */
+.left-menu {
+  width: 160rpx;
+  font-size: 28rpx;
+  position: absolute;
+  left: 0;
+  z-index: 10;
+}
+
+.left-menu-common {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+
+/* 子菜单未选中样式 */
+.left-menu-unselect {
+  color: #6c6c6c;
+  border-bottom: 1px solid #E3E3E3;
+  background: #F9F9F9;
+}
+
+.left-menu-selected {
+  color: #FF9C35;
+  border-left: 3px solid #FF9C35;
+  background: #FFF;
+}
+
+/* 右侧菜单样式 */
+.list-tab {
+  margin-left: 170rpx;
+  font-size: 25rpx;
+  background: #f3f4f6;
+  padding: 2px;
+  color: #ff9c35;
+}
+
+.content-list {
+  margin-left: 160rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.list-item,
+.list-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-image-box {
+  width: 160rpx;
+  height: 72rpx;
+  text-align: center;
+}
+
+.list-image {
+  width: 108rpx;
+  margin-top: 16rpx;
+}
+
+.list-name-box {
+  width: 200px;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.list-price {
+  margin-top: 20rpx;
+  color: #f05a86;
+}
+
+.list-btn>view {
+  flex: 1;
+  justify-content: space-around;
+  border: 1px solid #ff9c35;
+  text-align: center;
+  padding: 10rpx 0;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  margin: 15rpx 0;
+  color: #ff9c35;
+}
+
+.list-btn>view:last-child {
+  margin-left: 20rpx;
+margin-right: 20rpx;
+}
+
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  border-top: 1px solid #ccc;
+}
+
+.footer>button {
+  width: 50vw;
+  text-align: center;
+  color: #FF9C35;
+  font-size: 30rpx;
+  font-weight: normal;
+  background-color: #fff;
+  padding: 30rpx 0;
+}
+
+.footer>button:first-child {
+  border-right: 1px solid #ccc;
+}

@@ -8,7 +8,7 @@ module.exports = function(path,tempFilePaths,data){
 
   return new Promise((resolve,reject) => {
     wx.uploadFile({
-      url:  `http://172.20.10.7:8080/DianCan${path}`,  //接口地址
+      url:  `http://localhost:8080/DianCan${path}`,  //接口地址
       filePath: tempFilePaths[0],
       name: 'file',
       formData: data,

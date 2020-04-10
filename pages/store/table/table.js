@@ -8,25 +8,34 @@ Page({
     startY: 0,
     tableClassArr: null, //桌位类别对象
     input:'',
+    value:''
   },
   onLoad: function (options) {
-    console.log(options)
+    // console.log(options)
     this.setData({shopId:Number(options.shopId)})
   },
   onShow(){
     this.selectAll()
   },
+  // 跳转到子页面事件
+  skip(e){
+    let obj = e.currentTarget.dataset.obj
+    wx.navigateTo({
+      url: `../tbInfo/tbInfo?obj=${JSON.stringify(obj)}`,
+    })
+  },
+  // 查询所有列表信息
   selectAll(){
     let that = this
     fetch('/shop/findTbClass', JSON.stringify({
       tel: app.globalData.tel
     }), 'post').then(res => {
       console.log(res)
-      if(res.data.flag){
+      // if(res.data.flag){
         that.setData({
           tableClassArr: res.data.message
         })
-      }
+      // }
     })
   },
   input(e){
@@ -36,37 +45,37 @@ Page({
   delete(e){
     let that = this
     wx.showModal({
-      content: '此操作不可撤销',
+      content: '删除后所属桌位信息将全部删除，此操作不可撤销',
       confirmText: '确定',
       cancelText: '取消',
       showCancel: true,
       success: (result) => {
         // 获取待删除选项的主键ID
-        let curIndex = e.currentTarget.dataset.index
-        // 获取待删除选项在列表中的索引值
         let item = e.currentTarget.dataset.item
-        // console.log(`当前索引值：${curIndex}`)
-        fetch(`/shop/delTableClass?id=${curIndex}`).then(res=>{
-          if(res.data.flag){
-            wx.showToast({
-              title: '删除成功',
-              duration: 2000,
-              icon: 'success',
-              success:(res)=>{
-                setTimeout(() => {
-                  that.data.tableClassArr.splice(item,1)
-                  this.setData({tableClassArr:that.data.tableClassArr})
-                });
-              }
-            })
-          }else{
-            wx.showToast({
-              title: '删除失败，服务器错误',
-              duration: 2000,
-              icon: 'none'
-            })
-          }
-        })
+        console.log(item)
+        if(result.confirm){
+          fetch('/shop/delTableClass',JSON.stringify({item:item}),'post').then(res=>{
+            // console.log(res)
+            if(res.data.flag){
+              wx.showToast({
+                title: '删除成功',
+                duration: 2000,
+                icon: 'success',
+                success:(res)=>{
+                  setTimeout(() => {
+                    that.selectAll()
+                  });
+                }
+              })
+            }else{
+              wx.showToast({
+                title: '删除失败，服务器错误',
+                duration: 2000,
+                icon: 'none'
+              })
+            }
+          })
+        }
       }
     })
   },
@@ -102,7 +111,7 @@ Page({
                 setTimeout(() => {
                   that.selectAll()
                  that.setData({
-                   input:'',
+                   value:'',
                    isShowToast:!that.data.isShowToast,
                   })
                 });
@@ -112,8 +121,7 @@ Page({
             wx.showToast({
               title: '数据插入重复',
               duration: 2000,
-              icon: 'none',
-              image: 'image'
+              icon: 'none'
             })
           }
         })

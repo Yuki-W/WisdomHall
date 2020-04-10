@@ -1,0 +1,33 @@
+<view class="header">
+	<view>{{tableType.table_class_name}}</view>
+</view>
+<view class="weui-panel__bd">
+<block wx:if="{{!tableInfo}}">
+<view class="notData">
+		<image src="../../../images/undefined.png"></image>
+	</view>
+</block>
+<block wx:else>
+	<view wx:for="{{tableInfo}}" wx:for-item="item" wx:key="index" bindtouchmove="touchMove" bindtouchstart="touchStart" class="weui-media-box weui-media-box_appmsg {{item.isTouchMove?'menu-item-active':''}}" data-index="{{index}}" hover-class="weui-cell_active">
+		<view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+			<i class="weui-media-box__thumb iconfont icon_persons"></i>
+		</view>
+		<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+			<view class="weui-media-box__title">{{item.table_id}}号</view>
+			<view class="weui-media-box__desc">规格：{{item.tab_avail_num}}人桌</view>
+		</view>
+		<view class="inner">
+		<view class="update" data-type="{{item}}" bindtap="handle">修改</view>
+		<view class="del" data-index="{{item.table_id}}" bindtap="delete">删除</view>
+		</view>
+	</view>
+	</block>
+</view>
+
+<!-- 添加操作 -->
+<view class="itemFixed">
+	<view class="insert" data-type="insert" bindtap="handle">
+		<i class="iconfont iconjiahao"></i>
+		<text>添加</text>
+	</view>
+</view>

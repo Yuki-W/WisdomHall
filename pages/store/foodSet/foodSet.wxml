@@ -1,0 +1,35 @@
+<!-- 左侧菜单栏 -->
+<scroll-view class="left-menu" scroll-y>
+	<view wx:for="{{clssData}}" wx:key="{{index}}" class="left-menu-common {{activeIndex==index?'left-menu-selected':'left-menu-unselect'}}" data-index="{{index}}" bindtap="selectMenu">
+		<view class="list-menu-name">{{item.name}}</view>
+	</view>
+	{{toView}}
+</scroll-view>
+<!-- 右侧菜单列表 -->
+<scroll-view scroll-y style="height:1200rpx;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" scroll-with-animation="true">
+	<view class="content" id="a{{index}}" wx:for="{{listData}}" wx:key="lists">
+		<view class="list-tab">{{item.name}}</view>
+		<view class="content-list" wx:for="{{item.foods}}" wx:for-item="items" wx:key="list" wx:for-index="indexs">
+			<view class="list-item">
+				<view class="list-image-box">
+					<image class="list-image" mode="widthFix" src="http://localhost:8080/upload/{{items.imgUrl}}"></image>
+				</view>
+				<view class="list-name-box">
+					<view>{{items.name}}</view>
+					<view class="list-price">
+						￥{{items.price}}
+					</view>
+				</view>
+			</view>
+			<view class="list-btn">
+				<view>编辑</view>
+				<view>下架</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>
+<!-- 底部操作 -->
+<view class="footer">
+	<button data-type="classfic" bindtap="handle">分类管理</button>
+	<button data-type="newFood" bindtap="handle">新建菜品</button>
+</view>

@@ -1,32 +1,34 @@
 <!-- 区域管理 -->
 <block wx:if="{{!tableClassArr}}">
-	<view class="notData"><image src="../../../images/undefined.png"></image></view>
+	<view class="notData">
+		<image src="../../../images/undefined.png"></image>
+	</view>
 </block>
 <block wx:else>
 	<scroll-view scroll-y>
 		<view class="menu">
-			<view class="menu-item {{item.isTouchMove?'menu-item-active':''}}" wx:for="{{tableClassArr}}" wx:for-item="item" wx:key="index" data-index="{{index}}" bindtouchmove="touchMove" bindtouchstart="touchStart">
+			<view class="menu-item {{item.isTouchMove?'menu-item-active':''}}" wx:for="{{tableClassArr}}" wx:for-item="item" wx:key="index" data-index="{{index}}" bindtouchmove="touchMove" bindtouchstart="touchStart" data-obj="{{item}}" catchtap="skip">
 				<text class="content">{{item.table_class_name}}</text>
 				<i class="iconfont icon_youjiantou"></i>
-				<view class="inner del" data-item="{{index}}}" data-index="{{item.id}}" catchtap="delete">删除</view>
+				<view class="inner del" data-item="{{index}}}" data-item="{{item}}" catchtap="delete">删除</view>
 			</view>
 		</view>
 	</scroll-view>
 </block>
 
 <!-- 添加操作 -->
-	<view class="itemFixed">
-		<view class="insert" bindtap="handle">
-			<i class="iconfont iconjiahao"></i>
-			<text>添加</text>
-		</view>
+<view class="itemFixed">
+	<view class="insert" bindtap="handle">
+		<i class="iconfont iconjiahao"></i>
+		<text>添加</text>
 	</view>
+</view>
 
 <!-- 输入弹出框 -->
 <view class="masking {{isShowToast?'':'hide'}}">
 	<view class="toast">
 		<view class="toast-header">区域设置</view>
-		<input type="text" placeholder="请输入桌位区域" bindinput="input"></input>
+		<input type="text" placeholder="请输入桌位区域" bindinput="input" value="{{value}}"></input>
 		<view class="toast-bottom">
 			<text class="cancel" bindtap="handle">取消</text>
 			<text class="submit" bindtap="insert">确定</text>

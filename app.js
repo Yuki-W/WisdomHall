@@ -47,12 +47,11 @@ App({
   
 
   globalData: {
-    // api:"http://172.20.10.6:8080/DianCan", //真机测试服务器接口
     userInfo: null, //用户信息
     tel: null, //保存手机号
     is_login:false,  //是否登录标识
     hasShop:false,//店铺存在标识
     shop:null,//店铺信息
-    imgAPI:'http://172.20.10.7:8080/upload/'
+    // api:"http://192.168.0.196:8080"
   }
 })

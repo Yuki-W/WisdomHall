@@ -100,7 +100,6 @@ Page({
       case "address":
         var url;
         if (this.data.location) {
-
           url = `../address/address?longitude=${this.data.location.longitude}&latitude=${this.data.location.latitude}`
         } else {
           url = `../address/address`

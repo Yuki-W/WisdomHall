@@ -18,9 +18,9 @@
 		<view class="menu">
 			<view class="menuTittle">门店信息</view>
 			<view class="menuHeader">
-				<view class="itemBasic">
+				<view class="itemBasic" data-type="basicInfo" bindtap="handle">
 					<text>基础信息</text>
-					<!-- <view>编辑<i class="iconfont icon_youjiantou"></i></view> -->
+					<!-- <view><i class="iconfont icon_xiugai"></i></view> -->
 				</view>
 				<text>管理门店基本信息</text>
 			</view>
@@ -30,8 +30,25 @@
 			<text>门店地址：{{shop.address}}</text>
 		</view>
 
+		<!-- 餐厅设置 -->
+		<view class="menu header" data-type="storeDetail" bindtap="handle">
+			<view class="itemConent">
+				<view class="menuTittle">餐厅设置</view>
+				<text>设置门店营业时间、特色介绍等信息</text>
+			</view>
+			<i class="iconfont icon_xiugai"></i>
+		</view>
+
+		<!-- 菜品设置 -->
+		<view class="menu header" data-type="foodSet" bindtap="handle">
+			<view class="itemConent">
+				<view class="menuTittle">门店菜单</view>
+				<text>分类组合菜品，全面展示门店特色</text>
+			</view>
+			<i class="iconfont icon_xiugai"></i>
+		</view>
 		<!-- 桌位录入 -->
-		<view class="menu header" bindtap="handle">
+		<view class="menu header" data-type="table" bindtap="handle">
 			<view class="itemConent">
 				<view class="menuTittle">桌位设置</view>
 				<text>灵活设置桌位信息，高效管理门店</text>

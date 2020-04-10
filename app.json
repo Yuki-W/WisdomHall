@@ -1,11 +1,16 @@
 {
   "pages": [
-  
     "pages/index/index",
     "pages/orders/list/list",
     "pages/store/list/list",
     "pages/store/basicInfo/basicInfo",
     "pages/store/table/table",
+    "pages/store/tbInfo/tbInfo",
+    "pages/store/addTbInfo/addTbInfo",
+    "pages/store/storeDetail/storeDetail",
+    "pages/store/foodSet/foodSet",
+    "pages/subPages/foodSet/classfic/classfic",
+    "pages/store/foodSet/newFood/newFood",
     "pages/subPages/login/login",
     "pages/subPages/applyLog/applyLog",
     "pages/subPages/applyStore/applyStore",
